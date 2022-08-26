@@ -6,16 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/frame.css">
     <title>vue-boolzapp</title>
 </head>
 <body>
-    <div>
+    <div id="app">
         <div class="container">
             <div class="leftContainer">
                 <header class="leftContainer_header">
-                    <div class="userProfilePic"></div>
+                    <div class="userInfoContainer">
+                        <div class="userProfilePicContainer">
+                            <img v-bind:src="userImage">
+                        </div>
+                        <div class="userName">{{userName}}</div>
+                    </div>
+                    <div class="headerOptions">
+                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
                 </header>
+                <ul class="contactList">
+                    <li class="contactInfoContainer" v-for="(contact,index) in contacts">
+                        <div class="contactProfilePicContainer">
+                            <img v-bind:src="contact.avatar">
+                        </div>
+                        <div class="contactTextContainer">
+                            <div>{{contact.name}}</div>
+                            <div>{{contact.ultimo_messaggio}}</div>
+                        </div>
+                        <!--<i @click="toggleDoneOf(todo)" class="fa-solid fa-x"></i>-->
+                    </li>
+                </ul>
             </div>
             <div class="rightContainer"></div>
         </div>
