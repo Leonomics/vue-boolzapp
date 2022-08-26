@@ -27,6 +27,24 @@
                         <i class="fa-solid fa-bars"></i>
                     </div>
                 </header>
+
+                <div class="notificationSection">
+                    <div class="notificationImg">
+                        <img src="img/assets/avatar_1.jpg">
+                    </div>
+                    <div class="contactTextContainer">
+                        <div>Ricevi notifiche di nuovi messaggi</div>
+                        <div><u>Attiva notifiche desktop</u></div>
+                    </div>
+                </div>
+
+                <div class="search">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input type="text" size="50" placeholder="Cerca o inizia una nuova chat">
+                </div>
+
                 <ul class="contactList">
                     <li class="contactInfoContainer" @click="selectContact()" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in contacts">
                         <div class="contactProfilePicContainer">
@@ -34,7 +52,7 @@
                         </div>
                         <div class="contactTextContainer">
                             <div>{{contact.name}}</div>
-                            <div>{{contact.ultimo_messaggio}}</div>
+                            <div class="ultimo_messaggio">{{contact.ultimo_messaggio}}</div>
                         </div>
                     </li>
                 </ul>
