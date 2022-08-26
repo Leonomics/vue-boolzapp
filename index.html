@@ -28,6 +28,19 @@
                     </div>
                 </header>
                 <ul class="contactList">
+                    <li class="contactInfoContainer" @click="selectContact()" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in contacts">
+                        <div class="contactProfilePicContainer">
+                            <img v-bind:src="contact.avatar">
+                        </div>
+                        <div class="contactTextContainer">
+                            <div>{{contact.name}}</div>
+                            <div>{{contact.ultimo_messaggio}}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightContainer">
+                <header class="rightContainer_header">
                     <li class="contactInfoContainer" v-for="(contact,index) in contacts">
                         <div class="contactProfilePicContainer">
                             <img v-bind:src="contact.avatar">
@@ -36,11 +49,14 @@
                             <div>{{contact.name}}</div>
                             <div>{{contact.ultimo_messaggio}}</div>
                         </div>
-                        <!--<i @click="toggleDoneOf(todo)" class="fa-solid fa-x"></i>-->
                     </li>
-                </ul>
+                </header>
+                <div class="messages">
+                    <div class="userMessage">Hai portato a spasso il cane?</div>
+                    <div class="userMessage">Ricordati di stendere i panni</div>
+                    <div class="contactMessage">Tutto fa</div>
+                </div>
             </div>
-            <div class="rightContainer"></div>
         </div>
     </div>
 </body>

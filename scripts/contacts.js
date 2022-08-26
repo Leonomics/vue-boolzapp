@@ -56,10 +56,15 @@ const app = new Vue({
         userImage:"img/assets/avatar_io.jpg",
         contacts: contacts,
         classiContacts: 'contact',
+        isHovering:false,
+        hoveredContact:null,
     },
     
     methods:{
-        
+        selectContact(){
+            console.log("click")
+            
+        },
     },
 
 })

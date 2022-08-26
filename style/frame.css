@@ -94,3 +94,44 @@ body{
     background-image: url('../img/assets/mine.jpg');
 }
 
+.rightContainer_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: #eaeaea;
+}
+
+.hover{
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+
+
+/*Messages*/
+.messages{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.userMessage{
+    align-self: flex-end;
+    background-color: greenyellow;
+    padding: 2rem;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    
+}
+
+.contactMessage{
+    align-self: flex-start;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
