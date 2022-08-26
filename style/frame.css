@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    background-color: #dbdbd2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#009688 0%, #009688 100px, #dbdbd2 100px, #dbdbd2 100%);
+}
+
+.container{
+    position: relative;
+    display: flex;
+    width: 1396px;
+    max-width: 100%;
+    height: calc(100vh - 40px);
+    background-color: #eaeaea;
+}
+
+.leftContainer{
+    position: relative;
+    flex: 25%;
+    background-color: #ffffff;
+}
+
+.rightContainer{
+    position: relative;
+    flex: 65%;
+}
+
