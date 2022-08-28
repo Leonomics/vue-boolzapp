@@ -1,0 +1,8 @@
+.userMessage{
+    align-self: flex-end;
+    background-color: greenyellow;
+    padding: 2rem;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    
+}

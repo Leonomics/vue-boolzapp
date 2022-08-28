@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/frame.css">
+    <link rel="stylesheet" href="style/userMessages.css">
+    <link rel="stylesheet" href="style/contactMessages.css">
     <title>vue-boolzapp</title>
 </head>
 <body>
@@ -46,7 +48,7 @@
                 </div>
 
                 <ul class="contactList">
-                    <li class="contactInfoContainer" @click="selectContact()" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in contacts">
+                    <li class="contactInfoContainer" @click="selectContact(contact)" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in contacts">
                         <div class="contactProfilePicContainer">
                             <img v-bind:src="contact.avatar">
                         </div>
@@ -54,12 +56,17 @@
                             <div>{{contact.name}}</div>
                             <div class="ultimo_messaggio">{{contact.ultimo_messaggio}}</div>
                         </div>
+                        <div class="hour">
+                            {{contact.date}}
+                        </div>
                     </li>
                 </ul>
             </div>
             <div class="rightContainer">
                 <header class="rightContainer_header">
-                    <li class="contactInfoContainer" v-for="(contact,index) in contacts">
+                    
+                    <div class="contactInfoContainer" v-for="contact in contacts" v-if="contact.name==activeContact">
+                        
                         <div class="contactProfilePicContainer">
                             <img v-bind:src="contact.avatar">
                         </div>
@@ -67,12 +74,15 @@
                             <div>{{contact.name}}</div>
                             <div>{{contact.ultimo_messaggio}}</div>
                         </div>
-                    </li>
+                            
+                       
+                    </div>
+                    
                 </header>
                 <div class="messages">
                     <div class="userMessage">Hai portato a spasso il cane?</div>
                     <div class="userMessage">Ricordati di stendere i panni</div>
-                    <div class="contactMessage">Tutto fa</div>
+                    <div class="contactMessage">Tutto fatto</div>
                 </div>
             </div>
         </div>
