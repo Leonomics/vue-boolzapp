@@ -57,7 +57,8 @@
                             <div class="ultimo_messaggio">{{contact.ultimo_messaggio}}</div>
                         </div>
                         <div class="hour">
-                            {{contact.date}}
+                            <template v-if="contact.last_access_day == 'oggi'">{{contact.last_access_hour}}</template>
+                            <template v-else="contact.last_access_day != 'oggi'">{{contact.last_access_day}}</template>
                         </div>
                     </li>
                 </ul>
@@ -72,17 +73,19 @@
                         </div>
                         <div class="contactTextContainer">
                             <div>{{contact.name}}</div>
-                            <div>{{contact.ultimo_messaggio}}</div>
+                            <div>Ultimo accesso {{contact.last_access_day}} alle {{contact.last_access_hour}}    </div>
                         </div>
-                            
-                       
+       
                     </div>
                     
                 </header>
-                <div class="messages">
-                    <div class="userMessage">Hai portato a spasso il cane?</div>
-                    <div class="userMessage">Ricordati di stendere i panni</div>
-                    <div class="contactMessage">Tutto fatto</div>
+                <div class="messages" v-for="contact in contacts" v-if="contact.name==activeContact">
+                    <div class="userMessage" v-for="(contact,messages) in contacts" v-if="contact.name==activeContact">
+                        
+                    </div>
+                    <div class="contactMessage" v-for="(contact,messages) in contacts" v-if="contact.name==activeContact">
+                        
+                    </div>
                 </div>
             </div>
         </div>

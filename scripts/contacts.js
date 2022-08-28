@@ -3,7 +3,8 @@ const contacts = [
         avatar:'img/assets/avatar_1.jpg',
         name:'Michele',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
+        last_access_hour:'12:00',
+        last_access_day: 'oggi',
         messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -26,7 +27,8 @@ const contacts = [
         avatar:'img/assets/avatar_2.jpg',
         name:'Fabio',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
+        last_access_hour:'12:00',
+        last_access_day: 'ieri',
         messages: [
             {
             date: '20/03/2020 16:30:00',
@@ -49,7 +51,8 @@ const contacts = [
         avatar:'img/assets/avatar_3.jpg',
         name:'Samuele',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
+        last_access_hour:'12:00',
+        last_access_day: 'oggi',
         messages: [
             {
             date: '28/03/2020 10:10:40',
@@ -73,7 +76,8 @@ const contacts = [
         avatar:'img/assets/avatar_4.jpg',
         name:'Alessandro B.',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
+        last_access_hour:'12:00',
+        last_access_day: 'oggi',
         messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -91,7 +95,8 @@ const contacts = [
         avatar:'img/assets/avatar_5.jpg',
         name:'Alessandro L.',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
+        last_access_hour:'12:00',
+        last_access_day: 'oggi',
         messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -109,7 +114,8 @@ const contacts = [
         avatar:'img/assets/avatar_6.jpg',
         name:'Claudia',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
+        last_access_hour:'12:00',
+        last_access_day: 'oggi',
         messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -132,8 +138,8 @@ const contacts = [
         avatar:'img/assets/avatar_7.jpg',
         name:'Federico',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
-        
+        last_access_hour:'12:00',
+        last_access_day: 'oggi',
         messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -151,7 +157,8 @@ const contacts = [
         avatar:'img/assets/avatar_8.jpg',
         name:'Davide',
         ultimo_messaggio:'Ultimo messaggio inviato',
-        date:'12:00',
+        last_access_hour:'12:00',
+        last_access_day: 'oggi',
         messages: [
             {
             date: '10/01/2020 15:30:55',
@@ -172,13 +179,16 @@ const contacts = [
     },
 ]
 
+
+
 const app = new Vue({
     el:'#app',
     data:{
         userName:"Sofia",
         userImage:"img/assets/avatar_io.jpg",
         contacts: contacts,
-        classiContacts: 'contact',
+        //classiContacts: 'contact',
+
         isHovering:false,
         hoveredContact:null,
         activeContact: null,
