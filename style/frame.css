@@ -190,3 +190,18 @@ body{
 .ultimo_messaggio{
     color: grey;
 }
+
+.enterMessagesSection{
+    display: flex;
+    align-items: center;
+    background-color: #eaeaea;
+    justify-content: space-between;
+    position:absolute;
+    bottom: 0%;
+    flex-basis: 100%;
+    left: 0%;
+    right: 0%;
+    height: 3rem;
+
+}
+

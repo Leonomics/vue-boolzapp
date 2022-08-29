@@ -45,7 +45,7 @@
                     <div>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <input type="text" size="50" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" @keyup.enter="" size="50" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
                 <ul class="contactList">
@@ -86,8 +86,19 @@
                     
                 </header>
                 <div class="messages">
-                    <div class="userMessage" v-for="(element, index) in contacts[activeContact].messages" :class="[element.status == 'received' ? 'received' : 'sent']">
+                    <div v-for="(element, index) in contacts[activeContact].messages" :class="[element.status == 'received' ? 'received' : 'sent']">
                         {{element.message}}
+                    </div>
+                </div>
+                <div class="enterMessagesSection">
+                    <div class="emoji">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <div class="enterMessagesBar">
+                        <input  type="text" v-model="newMessage" @keyup.enter="addMessage" size="90%"  placeholder="Scrivi un messaggio">
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
             </div>

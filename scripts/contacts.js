@@ -188,10 +188,11 @@ const app = new Vue({
         userImage:"img/assets/avatar_io.jpg",
         contacts: contacts,
         //classiContacts: 'contact',
-
         isHovering:false,
         hoveredContact:null,
         activeContact: 0,
+        newMessage:"",
+        date:"",
     },
     
     methods:{
@@ -199,6 +200,19 @@ const app = new Vue({
             console.log("click")
             this.activeContact = index
             console.log(this.activeContact) 
+        },
+        addMessage(){
+            this.getDate()
+            this.messages = contacts[this.activeContact].messages,
+            this.messages.push({
+                date: this.date,
+                message: this.newMessage,
+                status:"sent",
+            })
+
+        },
+        getDate(){
+            this.date = new Date();
         },
     },
 
