@@ -20,7 +20,7 @@ body{
     background-color: #dbdbd2;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     min-height: 100vh;
     background: linear-gradient(#009688 0%, #009688 100px, #dbdbd2 100px, #dbdbd2 100%);
 }
@@ -32,7 +32,10 @@ body{
     display: flex;
     width: 1396px;
     max-width: 100%;
-    height: calc(100vh - 40px);
+    margin-top: 40px;
+    height: 100%;
+    /*height: calc(100vh - 40px);*/
+    max-height: fit-content;
     background-color: #eaeaea;
 }
 
@@ -42,7 +45,7 @@ body{
     /*flex: 25%;*/
     flex-basis: 320px;
     background-color: #ffffff;
-    flex-grow: 1;
+    flex:30%
 }
 
 .contactInfoContainer{              /*contains all contacts' data: img, name, last message*/
@@ -123,9 +126,10 @@ body{
 
 .rightContainer{
     position: relative;
-    flex: 65%;
+    flex: 70%;
     background-image: url('../img/assets/mine.jpg');
-    background-size: cover;
+    background-size:contain;
+
 }
 
 .rightContainer_header{
