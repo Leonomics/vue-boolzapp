@@ -12,6 +12,9 @@ ul, ol, menu{
     list-style: none;
 }
 
+html{
+    font-family: 'Roboto', sans-serif;
+}
 
 body{
     background-color: #dbdbd2;
@@ -130,9 +133,19 @@ body{
     /*justify-content: space-between;*/
     /*align-items: center;*/
     position: relative;
+    justify-content: space-between;
     width: 100%;
     height: 60px;
     background-color: #eaeaea;
+}
+
+.rightContainer_options{
+    align-self: center;
+
+}
+
+.option{
+    margin-right: 5px;
 }
 
 .hover{
