@@ -8,8 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/frame.css">
-    <link rel="stylesheet" href="style/userMessages.css">
-    <link rel="stylesheet" href="style/contactMessages.css">
     <title>vue-boolzapp</title>
 </head>
 <body>
@@ -48,7 +46,7 @@
                 </div>
 
                 <ul class="contactList">
-                    <li class="contactInfoContainer" @click="selectContact(contact)" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in contacts">
+                    <li class="contactInfoContainer" @click="selectContact(index)" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in contacts">
                         <div class="contactProfilePicContainer">
                             <img v-bind:src="contact.avatar">
                         </div>
@@ -66,25 +64,22 @@
             <div class="rightContainer">
                 <header class="rightContainer_header">
                     
-                    <div class="contactInfoContainer" v-for="contact in contacts" v-if="contact.name==activeContact">
+                    <div class="contactInfoContainer">
                         
                         <div class="contactProfilePicContainer">
-                            <img v-bind:src="contact.avatar">
+                            <img v-bind:src="contacts[activeContact].avatar">
                         </div>
                         <div class="contactTextContainer">
-                            <div>{{contact.name}}</div>
-                            <div>Ultimo accesso {{contact.last_access_day}} alle {{contact.last_access_hour}}    </div>
+                            <div>{{contacts[activeContact].name}}</div>
+                            <div>Ultimo accesso {{contacts[activeContact].last_access_day}} alle {{contacts[activeContact].last_access_hour}}    </div>
                         </div>
        
                     </div>
                     
                 </header>
-                <div class="messages" v-for="contact in contacts" v-if="contact.name==activeContact">
-                    <div class="userMessage" v-for="(contact,messages) in contacts" v-if="contact.name==activeContact">
-                        
-                    </div>
-                    <div class="contactMessage" v-for="(contact,messages) in contacts" v-if="contact.name==activeContact">
-                        
+                <div class="messages">
+                    <div class="userMessage" v-for="(element, index) in contacts[activeContact].messages" :class="[element.status == 'received' ? 'received' : 'sent']">
+                        {{element.message}}
                     </div>
                 </div>
             </div>

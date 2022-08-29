@@ -191,13 +191,13 @@ const app = new Vue({
 
         isHovering:false,
         hoveredContact:null,
-        activeContact: null,
+        activeContact: 0,
     },
     
     methods:{
-        selectContact(contact){
+        selectContact(index){
             console.log("click")
-            this.activeContact = contact.name 
+            this.activeContact = index
             console.log(this.activeContact) 
         },
     },
