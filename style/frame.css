@@ -97,6 +97,10 @@ i.fa-magnifying-glass:not(.option){
     background-color: #eaeaea;
 }
 
+.hidden{
+    visibility: hidden;
+}
+
 .userInfoContainer{
     display: flex;
     justify-content: flex-start;

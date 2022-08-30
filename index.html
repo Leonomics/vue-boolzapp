@@ -45,11 +45,11 @@
                     <div>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <input type="text" @keyup.enter="" size="50" placeholder="Cerca o inizia una nuova chat">
+                    <input id="search-input" type="text" v-model="userResearch" size="50" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
                 <ul class="contactList">
-                    <li class="contactInfoContainer" @click="selectContact(index)" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in contacts">
+                    <li class="contactInfoContainer" @click="selectContact(index)" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']" v-for="(contact,index) in filteredContacts">
                         <div class="contactProfilePicContainer">
                             <img v-bind:src="contact.avatar">
                         </div>
@@ -107,3 +107,5 @@
 </body>
 <script src="scripts/contacts.js"></script>
 </html>
+
+<!-- v-for="(contact,index) in contacts"-->

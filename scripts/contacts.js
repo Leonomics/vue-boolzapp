@@ -180,7 +180,6 @@ const contacts = [
 ]
 
 
-
 const app = new Vue({
     el:'#app',
     data:{
@@ -192,7 +191,17 @@ const app = new Vue({
         hoveredContact:null,
         activeContact: 0,
         newMessage:"",
+        userResearch:"",
         date:"",
+        hidden: false,
+    },
+
+    computed:{
+        filteredContacts: function(){
+            return this.contacts.filter((contact)=>{
+                return contact.name.toLowerCase().trim().match(this.userResearch.toLowerCase().trim())
+            })
+        }
     },
     
     methods:{
@@ -224,7 +233,7 @@ const app = new Vue({
                 }
                 this.messages.push(message)
             }, 2000)
-        }
+        },
     },
 
 })
