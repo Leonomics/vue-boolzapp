@@ -50,7 +50,7 @@
 
                 <ul class="contactList">
                     <template v-for="(contact,index) in contacts">
-                    <li class="contactInfoContainer" v-if="contact.name.toLowerCase().includes(userResearch.toLowerCase())" @click="selectContact(index)" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']"  >
+                    <li class="contactInfoContainer" v-if="contact.name.trim().toLowerCase().includes(userResearch.trim().toLowerCase())" @click="selectContact(index)" @mouseout="hoveredContact=null" @mouseover="hoveredContact = index" :class="[hoveredContact == index ? 'hover' : '']"  >
                         <div class="contactProfilePicContainer">
                             <img v-bind:src="contact.avatar">
                         </div>
