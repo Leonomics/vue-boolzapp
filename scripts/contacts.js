@@ -2,6 +2,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_1.jpg',
         name:'Michele',
+        id:1,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'oggi',
@@ -26,6 +27,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_2.jpg',
         name:'Fabio',
+        id:2,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'ieri',
@@ -50,6 +52,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_3.jpg',
         name:'Samuele',
+        id:3,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'oggi',
@@ -75,6 +78,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_4.jpg',
         name:'Alessandro B.',
+        id:4,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'oggi',
@@ -94,6 +98,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_5.jpg',
         name:'Alessandro L.',
+        id:5,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'oggi',
@@ -113,6 +118,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_6.jpg',
         name:'Claudia',
+        id:6,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'oggi',
@@ -137,6 +143,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_7.jpg',
         name:'Federico',
+        id:7,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'oggi',
@@ -156,6 +163,7 @@ const contacts = [
     {
         avatar:'img/assets/avatar_8.jpg',
         name:'Davide',
+        id:8,
         ultimo_messaggio:'Ultimo messaggio inviato',
         last_access_hour:'12:00',
         last_access_day: 'oggi',
@@ -191,18 +199,18 @@ const app = new Vue({
         hoveredContact:null,
         activeContact: 0,
         newMessage:"",
-        userResearch:"",
         date:"",
-        hidden: false,
+        userResearch:"",
     },
 
-    computed:{
+    /*computed:{
         filteredContacts: function(){
             return this.contacts.filter((contact)=>{
                 return contact.name.toLowerCase().trim().match(this.userResearch.toLowerCase().trim())
             })
+            
         }
-    },
+    },*/
     
     methods:{
         selectContact(index){
@@ -237,3 +245,4 @@ const app = new Vue({
     },
 
 })
+
