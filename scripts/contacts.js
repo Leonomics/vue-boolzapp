@@ -209,11 +209,22 @@ const app = new Vue({
                 message: this.newMessage,
                 status:"sent",
             })
+            this.getResponse()
 
         },
         getDate(){
             this.date = new Date();
         },
+        getResponse(){
+            setTimeout(()=> {
+                const message={
+                    date:'',
+                    message:'ok',
+                    status:'received',
+                }
+                this.messages.push(message)
+            }, 2000)
+        }
     },
 
 })
