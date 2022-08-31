@@ -223,10 +223,10 @@ const app = new Vue({
             this.messages = contacts[this.activeContact].messages,
             this.messages.push({
                 date: this.getDate(),
-                message: this.newMessage,
+                message: this.newMessage.trim(),
                 status:"sent",
             })
-            this.getResponse()
+            this.getResponse();
 
         },
         getDate(){
