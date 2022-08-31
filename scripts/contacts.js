@@ -220,14 +220,16 @@ const app = new Vue({
         },
         addMessage(){
             //this.getDate()
-            this.messages = contacts[this.activeContact].messages,
-            this.messages.push({
+            if(this.newMessage.trim() != ""){
+                this.messages = contacts[this.activeContact].messages,
+                this.messages.push({
                 date: this.getDate(),
-                message: this.newMessage.trim(),
+                message: this.newMessage,
                 status:"sent",
             })
             this.getResponse();
-
+            }
+            
         },
         getDate(){
             //this.date = new Date();
