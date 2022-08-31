@@ -219,10 +219,10 @@ const app = new Vue({
             console.log(this.activeContact) 
         },
         addMessage(){
-            this.getDate()
+            //this.getDate()
             this.messages = contacts[this.activeContact].messages,
             this.messages.push({
-                date: this.date,
+                date: this.getDate(),
                 message: this.newMessage,
                 status:"sent",
             })
@@ -230,7 +230,8 @@ const app = new Vue({
 
         },
         getDate(){
-            this.date = new Date();
+            //this.date = new Date();
+            return Date();
         },
         getResponse(){
             setTimeout(()=> {
